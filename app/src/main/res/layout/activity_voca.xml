@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="vn.magik.groupdictionary_as.activity.VocaActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <!-- background -->
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@mipmap/bg_voca" />
+
+        <LinearLayout
+            android:id="@+id/lnToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true">
+
+            <include
+                android:id="@+id/toolbar"
+                layout="@layout/toolbar" />
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/pbVoca"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lnToolbar"
+            android:layout_marginTop="-10dp" />
+
+        <!-- content-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/viewPagerIndicator"
+            android:layout_below="@+id/pbVoca"
+            android:layout_marginTop="15dp"
+            android:gravity="center_vertical">
+
+            <RelativeLayout
+                android:id="@+id/rl_Next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:gravity="center">
+
+                <ImageButton
+                    android:id="@+id/btnNext"
+                    android:layout_width="42dip"
+                    android:layout_height="42dip"
+                    android:background="@mipmap/ic_next" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlback"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:gravity="center">
+
+                <ImageButton
+                    android:id="@+id/btnBack"
+                    android:layout_width="42dip"
+                    android:layout_height="42dip"
+                    android:background="@mipmap/ic_back"
+                    android:visibility="invisible"/>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toRightOf="@+id/rlback"
+                android:layout_toLeftOf="@id/rl_Next"
+                android:gravity="center"
+                >
+
+
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/pager_introduction"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:listitem="@layout/item_voca" />
+            </LinearLayout>
+        </RelativeLayout>
+
+
+        <!-- indicator circle-->
+        <RelativeLayout
+            android:id="@+id/viewPagerIndicator"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="5dp"
+            android:gravity="center">
+
+            <LinearLayout
+                android:id="@+id/linearPractice"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:gravity="center">
+                <!--android:layout_toLeftOf="@+id/rlNext"-->
+
+
+                <Button
+                    android:id="@+id/btnPractice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border"
+                    android:text="@string/btn_practice"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!--<LinearLayout-->
+            <!--android:id="@+id/viewPagerCountDots"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_centerHorizontal="true"-->
+            <!--android:gravity="center"-->
+            <!--android:orientation="horizontal" />-->
+
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_banner_voca"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" />
+</LinearLayout>

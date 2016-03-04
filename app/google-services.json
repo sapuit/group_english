@@ -1,0 +1,45 @@
+{
+  "project_info": {
+    "project_id": "picture-dictionary-9e31a",
+    "project_number": "684685731656",
+    "name": "Picture Dictionary"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:684685731656:android:3cd374e83d24d02a",
+        "client_id": "android:vn.magik.groupdictionary_as",
+        "client_type": 1,
+        "android_client_info": {
+          "package_name": "vn.magik.groupdictionary_as"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [],
+      "services": {
+        "analytics_service": {
+          "status": 2,
+          "analytics_property": {
+            "tracking_id": "UA-38580999-16"
+          }
+        },
+        "cloud_messaging_service": {
+          "status": 1,
+          "apns_config": []
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "google_signin_service": {
+          "status": 1
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "client_info": [],
+  "ARTIFACT_VERSION": "1"
+}

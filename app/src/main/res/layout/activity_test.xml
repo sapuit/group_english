@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="vn.magik.groupdictionary_as.activity.TestActivity">
+
+    <RelativeLayout
+        android:id="@+id/root_layout_test"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <!--background-->
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@mipmap/bg_voca" />
+
+        <!--toolbar-->
+        <LinearLayout
+            android:id="@+id/lnToolbar"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/toolbar_test"
+                layout="@layout/toolbar_test_activity" />
+        </LinearLayout>
+
+        <!--progess-->
+        <LinearLayout
+            android:id="@+id/linearProgess"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lnToolbar"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/viewPagerCountDots"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:orientation="horizontal" />
+
+            <!--<ProgressBar-->
+            <!--android:id="@+id/pbTest"-->
+            <!--style="?android:attr/progressBarStyleHorizontal"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginLeft="20dp"-->
+            <!--android:layout_marginRight="20dp"-->
+            <!--android:progressDrawable="@drawable/style_horizontal" />-->
+
+        </LinearLayout>
+
+
+        <!-- content-->
+        <FrameLayout
+            android:id="@+id/fmContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/linearSubmit"
+            android:layout_below="@+id/linearProgess"
+            android:padding="20dp" />
+
+        <!--show result-->
+        <LinearLayout
+            android:id="@+id/lnShowResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/linearSubmit"
+            android:background="@drawable/bg_correct"
+            android:gravity="center"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginBottom="12dp"
+            android:padding="10dp"
+            android:layout_centerHorizontal="true"
+            android:orientation="vertical"
+            android:visibility="invisible">
+
+            <FrameLayout
+                android:id="@+id/error_frame"
+                android:layout_width="43dp"
+                android:layout_height="43dp"
+                android:layout_marginTop="5dp"
+                android:visibility="visible">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/error_circle" />
+
+                <ImageView
+                    android:id="@+id/error_x"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/app_name"
+                    android:scaleType="center"
+                    android:src="@drawable/error_center_x" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/success_frame"
+                android:layout_width="43dp"
+                android:layout_height="43dp"
+                android:layout_marginTop="5dp"
+                android:visibility="gone">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/success_bow" />
+
+                <View
+                    android:id="@+id/mask_right"
+                    android:layout_width="35dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="right"
+                    android:layout_marginTop="-13dp"
+                    android:background="@android:color/white" />
+
+                <View
+                    android:id="@+id/mask_left"
+                    android:layout_width="21dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="-3dp"
+                    android:background="@android:color/white" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/success_circle" />
+
+                <vn.magik.groupdictionary_as.notice.SuccessTickView
+                    android:id="@+id/success_tick"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/tvResult"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Incorrect"
+                android:paddingTop="5dp"
+                android:textColor="@color/error_stroke_color"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvAnswer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Correct : "
+                android:padding="5dp"
+                android:textColor="@color/success_stroke_color"
+                android:textSize="15sp"
+                 />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/linearSubmit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="20dp"
+            android:paddingLeft="50dp"
+            android:paddingRight="50dp">
+
+            <Button
+                android:id="@+id/btnSubmit"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/border"
+                android:text="@string/submit"
+                android:textColor="@color/white"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_banner_test"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linearSubmit"
+        android:orientation="vertical" />
+</LinearLayout>

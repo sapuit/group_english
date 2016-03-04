@@ -1,0 +1,23 @@
+#generated files
+bin/
+gen/
+build/
+
+# Local configuration file 
+local.properties
+
+# Windows thumbnail db
+.DS_Store
+
+# IDEA/Android Studio project file
+.idea
+.iml
+
+# gradle cache
+.gradle
+
+# Sandbox stuff
+_sandbox
+
+# Gradle Properties
+gradle.properties
